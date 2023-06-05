@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 # This workflow will install Python dependencies, run tests and lint with 
 a single version of Python
 # For more information see: 
 https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+=======
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+>>>>>>> e226ceb7983ec825cca273a9f567e772527ecd22
 
 name: Python application
 
@@ -11,7 +16,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+<<<<<<< HEAD
 
+=======
+permissions:
+  contents: read
+>>>>>>> e226ceb7983ec825cca273a9f567e772527ecd22
 
 jobs:
   build:
@@ -28,6 +38,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flake8 pytest
+<<<<<<< HEAD
         if [ -f requirements.txt ]; then pip install -r requirements.txt; 
 fi
     - name: Lint with flake8
@@ -39,6 +50,15 @@ names
 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 
 --max-line-length=127 --statistics
+=======
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+>>>>>>> e226ceb7983ec825cca273a9f567e772527ecd22
     - name: Test with pytest
       run: |
         pytest
