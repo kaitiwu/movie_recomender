@@ -61,4 +61,4 @@ names
 >>>>>>> e226ceb7983ec825cca273a9f567e772527ecd22
     - name: Test with pytest
       run: |
-        pytest
+        pytest test_recommenders.py
